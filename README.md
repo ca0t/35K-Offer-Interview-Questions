@@ -1,8 +1,22 @@
-# 35K-Offer-Interview-Questions
+## String、String Buffer和String Build的区别，怎么保证线程安全
 
-## String Buffer和String Build的区别，怎么保证线程安全
+String、String、buffer、String Build都是通过char类型数组实现的，只不过String添加了final修饰，所以String变量定义了后不可变，如果对String变量进行**频繁**的修改、拼接等操作，会产生大量的GC回收，很占用系统的资源。
 
-## 什么是锁，什么是死锁
+String Buffer和String Build调用同一父类append方法，采用相同的扩容机制，保证了性能开销。
+
+String Buffer是线程安全的，String Build是非线程安全的。String Buffer在所有操作类的方法上添加了synchronized来保证线程安全。
+
+所以String Buffer要比String Build慢一些，在不考虑线程安全的情况下，尽量使用String Build。
+
+## 什么是锁
+
+jvm中一个对象的对象头包含gc状态、对象布局、类型、同步状态、哈希标识基本信息。
+
+锁就是改变对象的对象头中的同步状态。
+
+参考：（http://openjdk.java.net/groups/hotspot/docs/HotSpotGlossary.html） object header
+
+## 什么是死锁
 
 ## synchronized原理是什么
 
@@ -10,7 +24,13 @@
 
 ## synchronized锁优化，锁粗化，锁消除
 
-## 什么是自旋锁，偏向锁，轻量级锁，重量级锁
+## 什么是自旋锁
+
+## 什么是偏向锁
+
+## 什么是轻量级锁
+
+## 什么是重量级锁
 
 ## synchronized和volatile的区别是什么
 
