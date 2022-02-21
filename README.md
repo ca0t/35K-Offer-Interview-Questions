@@ -1,6 +1,6 @@
 ## String、String Buffer和String Build的区别，怎么保证线程安全
 
-String、String、buffer、String Build都是通过char类型数组实现的，只不过String添加了final修饰，所以String变量定义了后不可变，如果对String变量进行**频繁**的修改、拼接等操作，会产生大量的GC回收，很占用系统的资源。
+String、String buffer和String Build都是通过char类型数组实现的，只不过String添加了final修饰，所以String变量定义了后不可变，如果对String变量进行**频繁**的修改、拼接等操作，会产生大量的GC回收，很占用系统的资源。
 
 String Buffer和String Build调用同一父类append方法，采用相同的扩容机制，保证了性能开销。
 
@@ -28,9 +28,17 @@ jvm中一个对象的对象头包含gc状态、对象布局、类型、同步状
 
 ## 什么是偏向锁
 
+在无锁状态下，一个线程进来争夺锁资源，将线程id写入对象头markword中，无锁升级为偏向锁。
+
+jvm在启动后，默认延迟4秒后启动偏向锁。如果在五状态下给对象添加synchronized关键字，对象会直接升级为轻量级锁。
+
 ## 什么是轻量级锁
 
+在多个线程争夺锁资源的情况下，cas轻度竞争，偏向锁升级为轻量级锁。
+
 ## 什么是重量级锁
+
+cas竞争失败，多线程自旋，线程id进入等待队列，轻量级锁升级为重量级锁
 
 ## synchronized和volatile的区别是什么
 
@@ -47,6 +55,10 @@ jvm中一个对象的对象头包含gc状态、对象布局、类型、同步状
 ## 什么是AQS
 
 ## 什么是CAS
+
+cas可以称为无锁、自旋锁、乐观锁、轻量级锁、compareAndSet、compareAndSwap。
+
+cas机制为先比较，再设置/交换。
 
 ## 什么是乐观锁
 
