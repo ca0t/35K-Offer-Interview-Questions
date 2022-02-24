@@ -22,7 +22,13 @@ jvm中一个对象的对象头包含gc状态、对象布局、类型、同步状
 
 ## synchronized原理是什么
 
+在对方法或者是变量使用synchronized，class文件在编译后的字节码中会生成monitorenter和monitorexit两个指令，这两个指令会调用jvm中使用C++实现的trylock方法，再由该方法调用汇编指令调用系统低层接口实现锁的抢占，中间还会涉及锁升级一系列操作。
+
+jvm中每个对象都包含对象头，对齐数据，实例数据，对象的锁信息都包含在对象头的mark word中，其中包含无锁、偏向锁、轻量级锁、重量级锁的信息，synchronized就是修改mark word中锁的信息。
+
 ## synchronized怎么用的
+
+可以修饰方法，也可以修饰代码块。
 
 ## synchronized锁优化，锁粗化，锁消除
 
