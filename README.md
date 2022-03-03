@@ -1,3 +1,9 @@
+## spring自动装配原理
+
+## spring的ioc和aop是什么
+
+## linux常用命令
+
 ## String、String Buffer和String Build的区别，怎么保证线程安全
 
 String、String buffer和String Build都是通过char类型数组实现的，只不过String添加了final修饰，所以String变量定义了后不可变，如果对String变量进行**频繁**的修改、拼接等操作，会产生大量的GC回收，很占用系统的资源。
