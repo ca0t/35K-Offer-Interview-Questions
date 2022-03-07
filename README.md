@@ -22,7 +22,7 @@ jvm中一个对象的对象头包含gc状态、对象布局、类型、同步状
 
 锁就是改变对象的对象头中的同步状态。
 
-参考：（http://openjdk.java.net/groups/hotspot/docs/HotSpotGlossary.html） object header
+参考：（http://openjdk.java.net/groups/hotspot/docs/HotSpotGlossary.html ） object header
 
 ## 什么是死锁
 
