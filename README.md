@@ -1,6 +1,6 @@
 ## spring自动装配原理
 
-主要是通过@EnableAutoConfiguration注解来实现的，他会自动遍历目录下所有文件，找到@configuration注解的class，通过反射装载到IOC容器中。
+主要是通过@EnableAutoConfiguration注解来实现的，一般这个这个注解不需要我们手动实现，他会在程序启动时，自动从程序启动类的根目录下开始遍历目录下所有文件，找到@configuration注解的class，或者是@bean注解的class，通过反射装载到IOC容器中，如果是使用spring mvc则是通过xml文件装配bean，spring boot只需要class上添加@bean注解。
 
 ## spring的ioc和aop是什么
 
@@ -8,13 +8,17 @@ spring的核心就是ioc和aop，ioc是控制反转，aop是面向切面编程�
 
 ## linux常用命令
 
-mkdir 创建文件
+mkdir 创建文件夹
+touch 创建文件
 rm -rf 删除
 su 切换用户
 sudu 管理员权限
 vi或vim 修改文件
 cat 查看文件
 yum install 安装包
+yum remove 删除包
+yum -y updage 更新包
+yum -y upgrade 更新包但不更新软件和系统
 
 ## String、String Buffer和String Build的区别，怎么保证线程安全
 
