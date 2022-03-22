@@ -1,8 +1,20 @@
 ## spring自动装配原理
 
+主要是通过@EnableAutoConfiguration注解来实现的，他会自动遍历目录下所有文件，找到@configuration注解的class，通过反射装载到IOC容器中。
+
 ## spring的ioc和aop是什么
 
+spring的核心就是ioc和aop，ioc是控制反转，aop是面向切面编程，ioc控制反转就是说我们平时创建一个对象是手动new出来，自己管理的，而ioc是将对象交给spring框架来管理，他是通过DI注入来实现的，spring框架在启动时会加载所有bean信息，将他们放在一个map集合中，每一个bean都有自己的生命周期（拓展bean的生命周期）。aop概念比较抽象，用通俗的例子来讲，比如我们有一个add函数接口，我们需要记录这个函数的执行耗时，通常我们会y用current time来记录一个开始时间和一个结束时间来计算，如果每一个接口都这样做，会产生大量的冗余代码，特别是日志记录，但用aop我们可以通过注解的方式来减少代码冗余，常用的就是@after，@before,@around
+
 ## linux常用命令
+
+mkdir 创建文件
+rm -rf 删除
+su 切换用户
+sudu 管理员权限
+vi或vim 修改文件
+cat 查看文件
+yum install 安装包
 
 ## String、String Buffer和String Build的区别，怎么保证线程安全
 
@@ -25,6 +37,8 @@ jvm中一个对象的对象头包含gc状态、对象布局、类型、同步状
 参考：（http://openjdk.java.net/groups/hotspot/docs/HotSpotGlossary.html ） object header
 
 ## 什么是死锁
+
+在多线程编程中，多个线程对同一个对象使用了多把锁，造成了线程互相等待，程序不往下走了，一般称为死锁。
 
 ## synchronized原理是什么
 
@@ -62,7 +76,7 @@ jvm在启动后，默认延迟4秒后启动偏向锁（可以设置jvm参数修�
 
 ## 为什么要用volatile
 
-当一个线程修改一个被volatile修饰的变量的值时，会被其他线程立刻感知到。
+volatile的特点就是当一个线程修改一个被volatile修饰的变量的值时，会被其他线程立刻感知到。
 
 volatile只能保证在多线程情况下对共享变量读写数据具有原子性，其他情况下不能保证原子性。
 
