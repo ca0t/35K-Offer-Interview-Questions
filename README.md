@@ -4,20 +4,32 @@
 
 ## spring的ioc和aop是什么
 
-spring的核心就是ioc和aop，ioc是控制反转，aop是面向切面编程，ioc控制反转就是说我们平时创建一个对象是手动new出来，自己管理的，而ioc是将对象交给spring框架来管理，他是通过DI注入来实现的，spring框架在启动时会加载所有bean信息，将他们放在一个map集合中，每一个bean都有自己的生命周期（拓展bean的生命周期）。aop概念比较抽象，用通俗的例子来讲，比如我们有一个add函数接口，我们需要记录这个函数的执行耗时，通常我们会y用current time来记录一个开始时间和一个结束时间来计算，如果每一个接口都这样做，会产生大量的冗余代码，特别是日志记录，但用aop我们可以通过注解的方式来减少代码冗余，常用的就是@after，@before,@around
+spring的核心就是ioc和aop，ioc是控制反转，aop是面向切面编程，ioc控制反转就是说我们平时创建一个对象是手动new出来，自己管理的，而ioc是将对象交给spring框架来管理，他是通过DI注入来实现的，spring框架在启动时会加载所有bean信息，将他们放在一个map集合中，每一个bean都有自己的生命周期（拓展bean的生命周期）。
+
+aop概念比较抽象，用通俗的例子来讲，比如我们有一个add函数接口，我们需要记录这个函数的执行耗时，通常我们会用current time来记录一个开始时间和一个结束时间来计算，如果每一个接口都这样做，会产生大量的冗余代码，特别是日志记录，但用aop我们可以通过注解的方式来减少代码冗余，常用的就是@after，@before,@around
 
 ## linux常用命令
 
 mkdir 创建文件夹
+
 touch 创建文件
+
 rm -rf 删除
+
 su 切换用户
+
 sudu 管理员权限
+
 vi或vim 修改文件
+
 cat 查看文件
+
 yum install 安装包
+
 yum remove 删除包
+
 yum -y updage 更新包
+
 yum -y upgrade 更新包但不更新软件和系统
 
 ## String、String Buffer和String Build的区别，怎么保证线程安全
