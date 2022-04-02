@@ -1,3 +1,8 @@
+## MyBatis和MyBatis Plus有什么区别
+
+## Nacos主要做什么
+
+
 ## spring自动装配原理
 
 主要是通过@EnableAutoConfiguration注解来实现的，一般这个这个注解不需要我们手动实现，他会在程序启动时，自动从程序启动类的根目录下开始遍历目录下所有文件，找到@configuration注解的class，或者是@bean注解的class，通过反射装载到IOC容器中，如果是使用spring mvc则是通过xml文件装配bean，spring boot只需要class上添加@bean注解。
