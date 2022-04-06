@@ -121,7 +121,9 @@ ConcurrentHashMap是通过synchronized+CAS+红黑树实现的，他的所有操�
 
 ## 索引的原理
 
-创建索引时会生成一张hash表，将索引列的数据hash运算后存放在这张表里（顺序排序），下一次查找时根据条件hash运算到hash表中查找，可以很快的得到hash值对应的数据地址位置，不需要全表遍历。
+MySql中有Hash索引和BTREE索引
+hash索引是在创建索引时会生成一张hash表，将索引列的数据hash运算后存放在这张表里（顺序排序），下一次查找时根据条件hash运算到hash表中查找，可以很快的得到hash值对应的数据地址位置，不需要全表遍历。
+BTREE索引则是用的b+树数据结构
 
 ## synchronized锁优化，锁粗化，锁消除
 
