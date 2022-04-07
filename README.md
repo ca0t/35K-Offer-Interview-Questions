@@ -1,7 +1,14 @@
+## 常用的设计模式
+
+## AOP底层如何实现的
+
+## redis缓存穿透怎么解决 
+
+## 介绍MySQL的索引
+
+## spring如何加载配置
+
 ## SQL语句优化
- between and 
- in
- not in
 
 ## 封装 继承 多态
 
