@@ -1,4 +1,5 @@
-##依赖注入
+## 依赖注入
+
 在Spring容器启动时，容器会读取配置文件或注解，分析需要创建的Bean，创建Bean实例并将Bean注册到Bean工厂中。Bean工厂是Spring框架中的一个核心接口，它负责创建、配置和管理Bean实例。
 
 在创建Bean实例时，Spring容器会根据Bean定义中的依赖关系来判断需要注入哪些依赖。当Spring容器发现某个Bean需要注入其他Bean时，它会先根据被注入Bean的类型在容器中查找相应的Bean实例。
